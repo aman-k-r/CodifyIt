@@ -11,6 +11,10 @@ import {
 } from "react-router-dom";
 import { toast } from "react-hot-toast";
 import axios from "axios";
+import { VscSignOut } from "react-icons/vsc";
+import { IoCopyOutline } from "react-icons/io5";
+import "./EditorPage.css"
+import logo from "../assets/logo1.png"
 
 // List of supported languages
 const LANGUAGES = [
@@ -136,18 +140,17 @@ function EditorPage() {
     <div className="container-fluid vh-100 d-flex flex-column">
       <div className="row flex-grow-1">
         {/* Client panel */}
-        <div className="col-md-2 bg-dark text-light d-flex flex-column">
+        <div className="col-md-2 bg-dark text-light d-flex flex-column member">
           <img
-            src="/images/codecast.png"
+            src={logo}
             alt="Logo"
-            className="img-fluid mx-auto"
-            style={{ maxWidth: "150px", marginTop: "-43px" }}
+            className="img-fluid mx-auto py-2"
+            style={{ maxWidth: "150px"}}
           />
-          <hr style={{ marginTop: "-3rem" }} />
 
           {/* Client list container */}
           <div className="d-flex flex-column flex-grow-1 overflow-auto">
-            <span className="mb-2">Members</span>
+            <span className="mb-2 text-center py-2">Active Members</span>
             {clients.map((client) => (
               <Client key={client.socketId} username={client.username} />
             ))}
@@ -157,10 +160,10 @@ function EditorPage() {
           {/* Buttons */}
           <div className="mt-auto mb-3">
             <button className="btn btn-success w-100 mb-2" onClick={copyRoomId}>
-              Copy Room ID
+              <IoCopyOutline></IoCopyOutline>
             </button>
             <button className="btn btn-danger w-100" onClick={leaveRoom}>
-              Leave Room
+              <VscSignOut></VscSignOut>
             </button>
           </div>
         </div>
@@ -194,7 +197,7 @@ function EditorPage() {
 
       {/* Compiler toggle button */}
       <button
-        className="btn btn-primary position-fixed bottom-0 end-0 m-3"
+        className="btn btn-primary position-fixed bottom-0 end-0 m-4 cmpBtn"
         onClick={toggleCompileWindow}
         style={{ zIndex: 1050 }}
       >

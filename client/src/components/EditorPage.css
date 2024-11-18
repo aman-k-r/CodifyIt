@@ -1,0 +1,28 @@
+.editCon{
+  background: #d8f3dc;
+}
+
+
+.member img {
+  border-bottom: 2px solid #adb5bd;
+
+} 
+
+.btn-grp .btn1 {
+  background: #003049 !important;
+  color: whitesmoke !important;
+  border-radius: 0 !important;
+}
+
+.btn-grp .btn2 {
+  background: #ef233c !important;
+  color: whitesmoke !important;
+  border-radius: 0 !important;
+}
+
+.btn-grp svg {
+  font-size: 20px !important;
+}
+.cmpBtn {
+  border-radius: 0 !important;
+}
